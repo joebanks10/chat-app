@@ -5,13 +5,14 @@ const socketIO = require('socket.io');
 
 const { generateMessage } = require('./utils/message');
 
-const port = process.env.PORT || 3000;
-const publicPath = path.join(__dirname, '../public');
+const port = process.env.PORT || 5000;
+const clientPath = path.join(__dirname, '../client/public');
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-app.use(express.static(publicPath));
+app.use(express.static(clientPath));
 
 io.on('connection', (socket) => {
   console.log('New client connected');
