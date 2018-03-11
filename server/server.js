@@ -6,7 +6,7 @@ const socketIO = require('socket.io');
 const { generateMessage } = require('./utils/message');
 
 const port = process.env.PORT || 5000;
-const clientPath = path.join(__dirname, '../client/public');
+const clientPath = path.join(__dirname, '../client/build');
 
 const app = express();
 const server = http.createServer(app);
